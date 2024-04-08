@@ -39,32 +39,32 @@ export default function App() {
   );
 
   const fetchData = async() => {
-    // 1. Implement this function
-    
-    // Fetch the menu from the API_URL endpoint. You can visit the API_URL in your browser to inspect the data returned
-    // The category field comes as an object with a property called "title". You just need to get the title value and set it under the key "category".
-    // So the server response should be slighly transformed in this function (hint: map function) to flatten out each menu item in the array,
-    return [];
-  }
+    try {
+        const response = await fetch( API_URL );
+        const json = await response.json();
+        const menus = json.menu.map(( item ) => {
+            item.category = item.category.title;
+            return item;
+        });
+    } catch (error) {
+        console.error(error);
+        return [];
+      }
+    }
 
   useEffect(() => {
     (async () => {
       try {
         await createTable();
         let menuItems = await getMenuItems();
-
-        // The application only fetches the menu data once from a remote URL
-        // and then stores it into a SQLite database.
-        // After that, every application restart loads the menu from the database
         if (!menuItems.length) {
           const menuItems = await fetchData();
           saveMenuItems(menuItems);
         }
 
-        const sectionListData = getSectionListData(menuItems);
+        const sectionListData = getSectionListData(menuItems, sections);
         setData(sectionListData);
       } catch (e) {
-        // Handle error
         Alert.alert(e.message);
       }
     })();
@@ -73,7 +73,6 @@ export default function App() {
   useUpdateEffect(() => {
     (async () => {
       const activeCategories = sections.filter((s, i) => {
-        // If all filters are deselected, all categories are active
         if (filterSelections.every((item) => item === false)) {
           return true;
         }

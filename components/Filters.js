@@ -8,6 +8,7 @@ const Filters = ({ onChange, selections, sections }) => {
           onPress={() => {
             onChange(index);
           }}
+          key={section}
           style={{
             flex: 1 / sections.length,
             justifyContent: 'center',
