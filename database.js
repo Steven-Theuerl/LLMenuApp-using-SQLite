@@ -30,26 +30,26 @@ export function saveMenuItems(menuItems) {
   db.transaction((tx) => {
     menuItems.forEach((item) => {
         tx.executeSql(
-            'insert into menuitems (id, uuid, title, price, category) VALUES (?, ?, ?, ?, ?)',
-             [item.id, item.uuid, item.title, item.price, item.category],
+            'insert into menuitems (id, title, price, category) VALUES (?, ?, ?, ?)',
+             [item.id, item.title, item.price, item.category],
     )});
   });
 }
 
 export async function filterByQueryAndCategories(query, activeCategories) {
   return new Promise((resolve, reject) => {
-    let req = 'select * from menuitems'
+    let req = 'select * from menuitems';
     if (query.length > 0 || activeCategories.length > 0) {
         req = req + ' where'
         if (query.length > 0) {
-            req = req + ` title like "${query}"`
+            req = req + ` title like "%${query}%"`
                 if (activeCategories.length > 0) {
                     req = req + ' and'
                 }
         }
         if (activeCategories.length > 0) {
-            req = req + ` category in (${activeCategories.map((item) => {
-                return `'${item}'`
+            req = req + ` category in (${activeCategories.map(( item ) => {
+                return `'${ item }'`
             })})`
         }
     }

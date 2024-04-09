@@ -46,10 +46,11 @@ export default function App() {
             item.category = item.category.title;
             return item;
         });
+        return menus;
     } catch (error) {
         console.error(error);
-        return [];
       }
+      return [];
     }
 
   useEffect(() => {
