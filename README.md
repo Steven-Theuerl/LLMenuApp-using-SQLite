@@ -30,12 +30,12 @@ To run this project locally:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/Steven-Theuerl/LLMenuApp-using-SQLite.git
+   git clone https://github.com/Steven-Theuerl/Restaurant_App.git
    ```
 
 2. **Navigate to the Project Directory**:
    ```bash
-   cd LLMenuApp-using-SQLite
+   cd Restaurant_App
    ```
 
 3. **Install Dependencies**:
@@ -54,7 +54,7 @@ To run this project locally:
 ## 📝 Notes
 
 This project was developed as an early exploration into React Native and mobile data management using SQLite.  
-While it may not represent current best practices, it serves as a testament to my foundational skills and learning journey in software engineering and mobile application development.
+While it may not reflect current best practices, it stands as a foundational step in my journey through software engineering and mobile application development.
 
 ---
 
