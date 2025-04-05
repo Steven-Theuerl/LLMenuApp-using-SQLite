@@ -2,6 +2,8 @@
 
 Restaurant App is a React Native application designed to manage and display a customizable menu system. It utilizes SQLite for persistent local data storage, allowing onboarded and signed-in users to interact with and modify menu items seamlessly.
 
+![image](https://github.com/user-attachments/assets/61c6e2e2-3537-4637-b3b7-c19381e507dd)
+
 ---
 
 ## 📱 Features
