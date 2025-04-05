@@ -1,6 +1,6 @@
-# LLMenuApp
+# Restaurant App
 
-LLMenuApp is a React Native application designed to manage and display a customizable menu system. It utilizes SQLite for persistent local data storage, allowing users to interact with and modify menu items seamlessly.
+Restaurant App is a React Native application designed to manage and display a customizable menu system. It utilizes SQLite for persistent local data storage, allowing onboarded and signed-in users to interact with and modify menu items seamlessly.
 
 ---
 
@@ -52,7 +52,7 @@ To run this project locally:
 ## 📝 Notes
 
 This project was developed as an early exploration into React Native and mobile data management using SQLite.  
-While it may not represent current best practices, it serves as a testament to the foundational skills and learning journey in mobile application development.
+While it may not represent current best practices, it serves as a testament to my foundational skills and learning journey in software engineering and mobile application development.
 
 ---
 
